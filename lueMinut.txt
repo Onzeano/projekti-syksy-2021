@@ -1,3 +1,17 @@
-Tämä tiedosto sisältää tärkeitä yksityiskohtia projektista. 
+MUISTILISTA POWERSHELLIÄ VARTEN
 
-Pieni muutos tiedostoon.
+dir  : näytä kansion sisältö
+cd [KANSION NIMI]  : siirry kansioon ("change directory"). Esim. cd tiedostot siirtyy kansioon tiedostot. 
+cd.. : siirtyy yhden kansion taaksepäin
+
+
+
+MUISTILISTA GIT:TIÄ VARTEN:
+
+
+1) TEE AINA ALUKSI KUN ALOITAT KOODAAMISEN: git pull
+2) Sitten koodaa
+3) Kun haluat vielä tiedostot GitHubiin, kirjoita seuraavat komennot:
+git add .
+git commit -m "KIRJOITA VIESTI TÄHÄN"
+git push
