@@ -1,0 +1,3 @@
+Tämä tiedosto sisältää tärkeitä yksityiskohtia projektista. 
+
+Pieni muutos tiedostoon.
