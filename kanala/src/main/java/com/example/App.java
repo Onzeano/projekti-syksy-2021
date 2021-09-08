@@ -1,0 +1,20 @@
+package com.example;
+
+import javax.sound.sampled.SourceDataLine;
+
+/**
+ * Hello world!
+ */
+public final class App {
+    private App() {
+    }
+
+    /**
+     * Says hello to the world.
+     * @param args The arguments of the program.
+     */
+    public static void main(String[] args) {
+        Kana sulkanen = new Kana();
+        
+    }
+}
