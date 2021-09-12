@@ -8,13 +8,12 @@ cd.. : siirtyy yhden kansion taaksepäin
 
 MUISTILISTA GIT:TIÄ VARTEN:
 
-
-1) Siirry oikeaan kansioon:
+0) IHAN ALUKSI SIIRRY PROJEKTIKANSIOON, eli 
 cd git
 cd projekti-syksy-2021
-2) TEE AINA ALUKSI KUN ALOITAT KOODAAMISEN: git pull
-3) Sitten koodaa
-4) Kun haluat vielä tiedostot GitHubiin, kirjoita seuraavat komennot:
+1) TEE AINA ALUKSI KUN ALOITAT KOODAAMISEN: git pull
+2) Sitten koodaa
+3) Kun haluat vielä tiedostot GitHubiin, kirjoita seuraavat komennot:
 git add .
 git commit -m "KIRJOITA VIESTI TÄHÄN"
 git push
