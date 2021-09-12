@@ -3,17 +3,18 @@ MUISTILISTA POWERSHELLIÄ VARTEN
 dir  : näytä kansion sisältö
 cd [KANSION NIMI]  : siirry kansioon ("change directory"). Esim. cd tiedostot siirtyy kansioon tiedostot. 
 cd.. : siirtyy yhden kansion taaksepäin
-
+cd \ Siirtyy juureen (Eli ihan levyaseman alkuun)
 
 
 MUISTILISTA GIT:TIÄ VARTEN:
 
-0) IHAN ALUKSI SIIRRY PROJEKTIKANSIOON, eli 
+
+1) Siirry oikeaan kansioon:
 cd git
 cd projekti-syksy-2021
-1) TEE AINA ALUKSI KUN ALOITAT KOODAAMISEN: git pull
-2) Sitten koodaa
-3) Kun haluat vielä tiedostot GitHubiin, kirjoita seuraavat komennot:
+2) TEE AINA ALUKSI KUN ALOITAT KOODAAMISEN: git pull
+3) Sitten koodaa
+4) Kun haluat vielä tiedostot GitHubiin, kirjoita seuraavat komennot:
 git add .
 git commit -m "KIRJOITA VIESTI TÄHÄN"
 git push
