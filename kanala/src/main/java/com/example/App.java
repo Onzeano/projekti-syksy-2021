@@ -23,7 +23,7 @@ public final class App {
         Random rand = new Random();
 
         int raha = 1000;
-        int kanat = 0;
+        int munat = 0;
 
         Kana sulkanen = new Kana("Herra. Sulkanen", 200);
         Kana munanen = new Kana("Munanen", 130);
@@ -49,14 +49,21 @@ public final class App {
         kanakauppa.add(goldy);
         kanakauppa.add(kananen);
         kanakauppa.add(Siemenen);
-
+        
         while (true) {
+            
             System.out.println("");
             System.out.println("Sinulla on " + raha + " euroa ja " + kanalista.size() + " kanaa:");
+            System.out.println("sinulla on " + munat + " munaa.");
+
             for (Kana kana : kanalista) {
                 System.out.println(kana.getNimi());
             }
             
+            for (Kana kana : kanalista) {
+                System.out.println();
+                munat = munat + kana.muni();
+
             Kana ostokana = kanakauppa.get(rand.nextInt(kanakauppa.size())); 
             System.out.println("");
             System.out.println("Haluatko ostaa kanan " + ostokana.getNimi() + " (Maksaa " + ostokana.getHinta() + " euroa)" + " joo/ei");
@@ -69,7 +76,12 @@ public final class App {
                     kanakauppa.remove(ostokana);
                 }
 
+            }  
+            
             }
+
+
+            // System.out.println(sulkanen.muni());
         }
 
         // kanakauppa.size()
