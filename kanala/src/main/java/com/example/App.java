@@ -9,6 +9,11 @@ import java.util.ArrayList;
  * Hello world!
  */
 public final class App {
+    private static int munat = 0;
+    private static int paiva = 0;
+    private static ArrayList<Kana> kanalista = new ArrayList<Kana>();
+    private static int raha = 1000;
+
     private App() {
     }
 
@@ -22,8 +27,7 @@ public final class App {
         Scanner pelaaja = new Scanner(System.in);
         Random rand = new Random();
 
-        int raha = 1000;
-        int munat = 0;
+        
 
         Kana sulkanen = new Kana("Herra. Sulkanen", 200);
         Kana munanen = new Kana("Munanen", 130);
@@ -38,7 +42,7 @@ public final class App {
         System.out.println("Tervetuloa kanalaan!");
         System.out.println("");
 
-        ArrayList<Kana> kanalista = new ArrayList<Kana>();
+
         ArrayList<Kana> kanakauppa = new ArrayList<Kana>();
         kanakauppa.add(sulkanen);
         kanakauppa.add(munanen);
@@ -49,26 +53,24 @@ public final class App {
         kanakauppa.add(goldy);
         kanakauppa.add(kananen);
         kanakauppa.add(Siemenen);
-        
+
         while (true) {
-            
+
             System.out.println("");
-            System.out.println("Sinulla on " + raha + " euroa ja " + kanalista.size() + " kanaa:");
-            System.out.println("sinulla on " + munat + " munaa.");
+            System.out.println("Sinulla on " + raha + " euroa, " + munat + " munaa ja " + kanalista.size() + " kanaa:");
 
             for (Kana kana : kanalista) {
                 System.out.println(kana.getNimi());
             }
-            
-            for (Kana kana : kanalista) {
-                System.out.println();
-                munat = munat + kana.muni();
 
-            Kana ostokana = kanakauppa.get(rand.nextInt(kanakauppa.size())); 
+
+
+            Kana ostokana = kanakauppa.get(rand.nextInt(kanakauppa.size()));
             System.out.println("");
-            System.out.println("Haluatko ostaa kanan " + ostokana.getNimi() + " (Maksaa " + ostokana.getHinta() + " euroa)" + " joo/ei");
+            System.out.println("Haluatko ostaa kanan " + ostokana.getNimi() + " (Maksaa " + ostokana.getHinta()
+                    + " euroa)" + " joo/ei");
             String vastaus = pelaaja.nextLine();
-            
+
             if (vastaus.toLowerCase().equals("joo") || vastaus.toLowerCase().startsWith("kyl")) {
                 if (raha >= ostokana.getHinta()) {
                     raha = raha - ostokana.getHinta();
@@ -76,16 +78,29 @@ public final class App {
                     kanakauppa.remove(ostokana);
                 }
 
-            }  
-            
             }
-
-
+            else if (vastaus.toLowerCase().equals("lopeta")) {
+                break;
+            }
+            odota();
             // System.out.println(sulkanen.muni());
         }
 
         // kanakauppa.size()
         // kanakauppa.get()
 
+    }
+
+    private static void odota() {
+        paiva ++;
+        for (Kana kana : kanalista) {
+            munat = munat + kana.muni();
+        }
+
+    }
+
+    private static void myyMunia(int montako) {
+        munat = munat - montako;
+        raha = raha + montako * 5;
     }
 }

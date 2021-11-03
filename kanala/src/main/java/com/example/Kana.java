@@ -7,7 +7,12 @@ public class Kana {
     private int hinta;
     private int muna;
     private Random noppa; 
-    private int paiva;
+    
+
+    public Kana() {
+        this.nimi = "Herra. Sulkainen";
+        this.hinta = 100;
+    }
 
     public Kana(String nimi, int hinta) {
         this.nimi = nimi;
@@ -28,10 +33,7 @@ public class Kana {
         return this.noppa.nextInt(10) + 1;
     }
 
-    public int aika() {
-        paiva ++; 
-        return this.paiva;
-    }
+
 
     public void setNimi(String uusiNimi) {
         this.nimi = uusiNimi;
