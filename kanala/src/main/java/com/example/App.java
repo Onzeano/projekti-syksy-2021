@@ -57,32 +57,58 @@ public final class App {
         while (true) {
 
             System.out.println("");
-            System.out.println("Sinulla on " + raha + " euroa, " + munat + " munaa ja " + kanalista.size() + " kanaa:");
+            System.out.println("Valitse toiminto: ");
+            System.out.println("Laske rahat, listaa kanat, laske munat, myy munia, osta kana, odota.");
+            //System.out.println("Sinulla on " + raha + " euroa, " + munat + " munaa ja " + kanalista.size() + " kanaa:");
 
-            for (Kana kana : kanalista) {
-                System.out.println(kana.getNimi());
-            }
-
-
-
-            Kana ostokana = kanakauppa.get(rand.nextInt(kanakauppa.size()));
-            System.out.println("");
-            System.out.println("Haluatko ostaa kanan " + ostokana.getNimi() + " (Maksaa " + ostokana.getHinta()
-                    + " euroa)" + " joo/ei");
-            String vastaus = pelaaja.nextLine();
-
-            if (vastaus.toLowerCase().equals("joo") || vastaus.toLowerCase().startsWith("kyl")) {
-                if (raha >= ostokana.getHinta()) {
-                    raha = raha - ostokana.getHinta();
-                    kanalista.add(ostokana);
-                    kanakauppa.remove(ostokana);
+            String vastau = pelaaja.nextLine();
+            
+            if (vastau.toLowerCase().equals("listaa kanat")) {
+                for (Kana kana : kanalista) {
+                    System.out.println(kana.getNimi());
                 }
 
+            }  
+
+            if (vastau.toLowerCase().equals("laske rahat")) {
+                System.out.println("Sinulla on " + raha + " euroa.");
             }
-            else if (vastaus.toLowerCase().equals("lopeta")) {
+
+            if (vastau.toLowerCase().equals("laske munat")) {
+                System.out.println("Sinulla on " + munat + " munaa.");
+            }
+
+            if (vastau.toLowerCase().equals("osta kana")) {
+                Kana ostokana = kanakauppa.get(rand.nextInt(kanakauppa.size()));
+                System.out.println("");
+                System.out.println("Haluatko ostaa kanan " + ostokana.getNimi() + " (Maksaa " + ostokana.getHinta()
+                        + " euroa)" + " joo/ei");
+                String vastaus = pelaaja.nextLine();
+    
+                if (vastaus.toLowerCase().equals("joo") || vastaus.toLowerCase().startsWith("kyl")) {
+                    if (raha >= ostokana.getHinta()) {
+                        raha = raha - ostokana.getHinta();
+                        kanalista.add(ostokana);
+                        kanakauppa.remove(ostokana);
+                    }
+    
+                }
+            }
+
+            if (vastau.toLowerCase().equals("myy munia")) {
+                System.out.println("Montako myydään?");
+                Integer monta = pelaaja.nextInt();
+                myyMunia(monta);
+            }
+            
+            if (vastau.toLowerCase().equals("odota")) {
+                odota();
+            }
+
+            else if (vastau.toLowerCase().equals("lopeta")) {
                 break;
             }
-            odota();
+            
             // System.out.println(sulkanen.muni());
         }
 
