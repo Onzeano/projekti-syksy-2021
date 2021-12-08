@@ -1,10 +1,13 @@
 package com.example;
 
 import java.awt.Color;
+import java.io.File;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 /**
  * Hello world!
@@ -27,9 +30,12 @@ public final class Haltijapalvelu {
         ikkuna.getContentPane().setBackground(Color.cyan);
 
         //Ikkunaan lisäys
-        JLabel etiketti = new JLabel();
-        ikkuna.add(etiketti);
-        JButton nappi = new JButton();
+        ImageIcon kuva = new ImageIcon("picture.png");
+        File kuvatiedosto = new File("picture.png");
+        System.out.println(kuvatiedosto.exists());
+        System.out.println(kuvatiedosto.getAbsolutePath());
+        JButton nappi = new JButton("Tilaa haltija.");
+        nappi.setIcon(kuva);
         ikkuna.add(nappi);
     }   
 }
